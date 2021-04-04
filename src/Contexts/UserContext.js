@@ -46,7 +46,6 @@ export function UserStorage({ children }) {
       setLogin(false);
       window.localStorage.removeItem("token");
       navigate("/login");
-      console.log("deslogou");
     },
     [navigate]
   );
