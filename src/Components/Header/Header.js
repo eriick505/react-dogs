@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Header.module.css';
-import { ReactComponent as DogsLogo } from '../../Assets/dogs.svg';
-import { UserContext } from '../../Contexts/UserContext';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
+import { ReactComponent as DogsLogo } from "../../Assets/dogs.svg";
+import { UserContext } from "../../Contexts/UserContext";
 
 function Header() {
   const { data, userLogout } = React.useContext(UserContext);
@@ -14,10 +14,12 @@ function Header() {
           <DogsLogo />
         </Link>
         {data ? (
-          <Link className={styles.login} to="conta">
-            {data.nome}
+          <>
+            <Link className={styles.login} to="conta">
+              {data.nome}
+            </Link>
             <button onClick={userLogout}>Sair</button>
-          </Link>
+          </>
         ) : (
           <Link className={styles.login} to="login">
             Login / Criar
