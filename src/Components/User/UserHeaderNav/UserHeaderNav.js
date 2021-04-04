@@ -5,27 +5,29 @@ import { ReactComponent as MinhasFotos } from "../../../Assets/feed.svg";
 import { ReactComponent as Estatisticas } from "../../../Assets/estatisticas.svg";
 import { ReactComponent as AdicionarFoto } from "../../../Assets/adicionar.svg";
 import { ReactComponent as Sair } from "../../../Assets/sair.svg";
+import styles from "./UserHeaderNav.module.css";
 
 function UserHeaderNav() {
+  const [mobile, setMobile] = React.useState(null);
   const { userLogout } = React.useContext(UserContext);
 
   return (
-    <nav>
-      <NavLink to="/conta">
+    <nav className={styles.nav}>
+      <NavLink to="/conta" end activeClassName={styles.active}>
         <MinhasFotos />
-        Minhas Fotos
+        {mobile && "Minhas Fotos"}
       </NavLink>
-      <NavLink to="/conta/estatisticas">
+      <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
         <Estatisticas />
-        Estatísticas
+        {mobile && "Estatísticas"}
       </NavLink>
-      <NavLink to="/conta/postar">
+      <NavLink to="/conta/postar" activeClassName={styles.active}>
         <AdicionarFoto />
-        Adicionar Foto
+        {mobile && "Adicionar Foto"}
       </NavLink>
       <button onClick={userLogout}>
         <Sair />
-        Sair
+        {mobile && "Sair"}
       </button>
     </nav>
   );
