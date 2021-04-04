@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router";
-import UserHeader from "./UserHeader";
+import UserHeader from "./UserHeader/UserHeader";
 import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
 import Feed from "../Feed/Feed";
