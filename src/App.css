@@ -53,6 +53,10 @@ a {
   margin: 0 auto;
 }
 
+.mainContainer {
+  margin-top: 4rem;
+}
+
 .title {
   font-family: var(--secondary-font);
   line-height: 1;
