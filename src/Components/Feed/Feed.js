@@ -5,7 +5,8 @@ import FeedPhotos from './FeedPhotos/FeedPhotos';
 function Feed() {
   return (
     <div>
-      <FeedModal /> <FeedPhotos />
+      <FeedModal />
+      <FeedPhotos />
     </div>
   );
 }
