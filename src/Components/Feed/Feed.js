@@ -1,6 +1,9 @@
-import React from 'react';
-import FeedModal from './FeedModal/FeedModal';
-import FeedPhotos from './FeedPhotos/FeedPhotos';
+import React from "react";
+
+import PropTypes from "prop-types";
+
+import FeedModal from "./FeedModal/FeedModal";
+import FeedPhotos from "./FeedPhotos/FeedPhotos";
 
 function Feed({ user }) {
   const [modalPhoto, setModalPhoto] = React.useState(null);
@@ -16,7 +19,7 @@ function Feed({ user }) {
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.75 && !wait) {
           wait = true;
-          setPages(pages => [...pages, pages.length + 1]);
+          setPages((pages) => [...pages, pages.length + 1]);
           setTimeout(() => {
             wait = false;
           }, 500);
@@ -24,12 +27,12 @@ function Feed({ user }) {
       }
     }
 
-    window.addEventListener('wheel', infiniteScroll);
-    window.addEventListener('scroll', infiniteScroll);
+    window.addEventListener("wheel", infiniteScroll);
+    window.addEventListener("scroll", infiniteScroll);
 
     return () => {
-      window.removeEventListener('wheel', infiniteScroll);
-      window.removeEventListener('scroll', infiniteScroll);
+      window.removeEventListener("wheel", infiniteScroll);
+      window.removeEventListener("scroll", infiniteScroll);
     };
   }, [infinite]);
 
@@ -38,7 +41,7 @@ function Feed({ user }) {
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
-      {pages.map(page => (
+      {pages.map((page) => (
         <FeedPhotos
           key={page}
           user={user}
@@ -50,9 +53,9 @@ function Feed({ user }) {
       {!infinite && !user && (
         <p
           style={{
-            textAlign: 'center',
-            padding: '2rem 0 4rem 0',
-            color: '#888',
+            textAlign: "center",
+            padding: "2rem 0 4rem 0",
+            color: "#888",
           }}
         >
           Não existem mais postagens.
@@ -61,5 +64,16 @@ function Feed({ user }) {
     </div>
   );
 }
+
+Feed.defaultProps = {
+  user: 0,
+};
+
+Feed.propTypes = {
+  user: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
+};
 
 export default Feed;
