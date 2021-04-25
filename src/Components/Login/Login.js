@@ -1,10 +1,14 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router";
-import LoginForm from "./LoginForm";
-import LoginCreate from "./LoginCreate";
-import LoginPasswordLost from "./LoginPasswordLost";
-import LoginPasswordReset from "./LoginPasswordReset";
+
+import LoginForm from "./LoginForm/LoginForm";
+import LoginCreate from "./LoginCreate/LoginCreate";
+import LoginPasswordLost from "./LoginPasswordLost/LoginPasswordLost";
+import LoginPasswordReset from "./LoginPasswordReset/LoginPasswordReset";
+import NotFound from "../NotFound/NotFound";
+
 import { UserContext } from "../../Contexts/UserContext";
+
 import styles from "./Login.module.css";
 
 function Login() {
@@ -19,6 +23,7 @@ function Login() {
           <Route path="criar" element={<LoginCreate />} />
           <Route path="perdeu" element={<LoginPasswordLost />} />
           <Route path="resetar" element={<LoginPasswordReset />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </section>
