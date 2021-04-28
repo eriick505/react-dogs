@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router";
 import UserHeader from "./UserHeader/UserHeader";
 import UserPhotoPost from "./UserPhotoPost/UserPhotoPost";
 import UserStats from "./UserStats";
+import Head from "../Head/Head";
 import Feed from "../Feed/Feed";
 import NotFound from "../NotFound/NotFound";
 
@@ -14,6 +15,7 @@ function User() {
 
   return (
     <section className="container">
+      <Head title="Minha Conta" />
       <UserHeader />
       <Routes>
         <Route path="/" element={<Feed user={data.id} />} />
