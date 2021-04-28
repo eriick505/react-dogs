@@ -2,6 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import Head from "../../Head/Head";
 import Input from "../../Forms/Input/Input";
 import Button from "../../Forms/Button/Button";
 import useForm from "../../../Hooks/useForm";
@@ -29,6 +30,7 @@ function LoginForm() {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Usuario" type="text" name="username" {...username} />

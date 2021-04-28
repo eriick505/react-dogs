@@ -1,5 +1,6 @@
 import React from "react";
 
+import Head from "../../Head/Head";
 import Button from "../../Forms/Button/Button";
 import Input from "../../Forms/Input/Input";
 import Error from "../../Helper/Error/Error";
@@ -44,6 +45,7 @@ function LoginPasswordReset() {
 
   return (
     <section>
+      <Head title="Resete a Senha" />
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input

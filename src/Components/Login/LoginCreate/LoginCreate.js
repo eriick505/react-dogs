@@ -1,5 +1,6 @@
 import React from "react";
 
+import Head from "../../Head/Head";
 import Input from "../../Forms/Input/Input";
 import Button from "../../Forms/Button/Button";
 import Error from "../../Helper/Error/Error";
@@ -31,6 +32,7 @@ function LoginCreate() {
 
   return (
     <section className="animeLeft">
+      <Head title="Cadastre-se" />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />

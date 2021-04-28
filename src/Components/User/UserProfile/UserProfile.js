@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 
+import Head from "../../Head/Head";
 import Feed from "../../Feed/Feed";
 
 function UserProfile() {
@@ -8,6 +9,7 @@ function UserProfile() {
 
   return (
     <section className="container mainContainer">
+      <Head title={user} />
       <h1 className="title">{user}</h1>
       <Feed user={user} />
     </section>

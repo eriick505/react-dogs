@@ -1,5 +1,6 @@
 import React from "react";
 
+import Head from "../../Head/Head";
 import Input from "../../Forms/Input/Input";
 import Button from "../../Forms/Button/Button";
 import Error from "../../Helper/Error/Error";
@@ -28,6 +29,7 @@ function LoginPasswordLost() {
 
   return (
     <section>
+      <Head title="Perdeu a senha?" />
       <h1 className="title">Perdeu a Senha?</h1>
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>
