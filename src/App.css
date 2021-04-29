@@ -101,3 +101,7 @@ a {
     transform: initial;
   }
 }
+
+.VictoryContainer {
+  height: initial i !important;
+}
